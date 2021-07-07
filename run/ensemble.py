@@ -1,3 +1,5 @@
+import time
+time.sleep(4)
 from __future__ import print_function
 import argparse
 import torch
@@ -6,7 +8,6 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.optim.lr_scheduler import StepLR
-import time
 import os
 
 class Net(nn.Module):

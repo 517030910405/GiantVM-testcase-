@@ -5,7 +5,8 @@ map<int , int> GetVNode;
 set<int> collect, newItem, removeItem;
 vector<int> numMission, startVCPU, endVCPU;
 int mysleep(){
-    usleep(100);
+    // usleep(100);
+    sleep(1);
     return 0;
 }
 int getCPUinfo(int nodeNum, int vcPerNode){
