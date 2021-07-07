@@ -116,7 +116,7 @@ def main():
         i: Net().to(device) for i in range(args.nameFrom, args.nameTo)
     }
     for i in range(args.nameFrom, args.nameTo):
-        while (not os.path.isfile("mnist_cnn%d.pt"%(i))):
+        while (not os.path.isfile("model%d/mnist_cnn.pt"%(i))):
             time.sleep(1)
         models[i].load_state_dict(torch.load("model%d/mnist_cnn.pt"%(i)))
 
