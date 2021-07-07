@@ -32,12 +32,12 @@ int tasksetter(int pid, int cpufrom, int cputo){
     char buffer[200];
     sprintf(buffer, "taskset -a -cp %d-%d %d",cpufrom,cputo,pid);
     system(buffer);
-    mysleep();
+    // mysleep();
     return 0;
 }
 int getPidFromExample(){
     system("ps ax | grep \"python \"| grep -v grep > load.txt");
-    mysleep();
+    // mysleep();
     FILE *f = fopen("load.txt","rb");
     int pid = -1;
     collect.clear();
