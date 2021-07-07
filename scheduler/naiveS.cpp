@@ -4,6 +4,10 @@ using namespace std;
 map<int , int> GetVNode;
 set<int> collect, newItem, removeItem;
 vector<int> numMission, startVCPU, endVCPU;
+int mysleep(){
+    usleep(100);
+    return 0;
+}
 int getCPUinfo(int nodeNum, int vcPerNode){
     for (int i=0;i<nodeNum;++i){
         numMission.push_back(0);
@@ -27,12 +31,12 @@ int tasksetter(int pid, int cpufrom, int cputo){
     char buffer[200];
     sprintf(buffer, "taskset -a -cp %d-%d %d",cpufrom,cputo,pid);
     system(buffer);
-    usleep(1);
+    mysleep();
     return 0;
 }
 int getPidFromExample(){
     system("ps ax | grep \"python \"| grep -v grep > load.txt");
-    usleep(1);
+    mysleep();
     FILE *f = fopen("load.txt","rb");
     int pid = -1;
     collect.clear();
@@ -88,6 +92,6 @@ int main(){
     while (true){
         sched();
         // sleep(1);
-        usleep(1);
+        mysleep();
     }
 }
