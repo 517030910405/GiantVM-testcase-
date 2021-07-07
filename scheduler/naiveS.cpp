@@ -85,6 +85,7 @@ int main(){
     }
     while (true){
         sched();
-        sleep(1);
+        // sleep(1);
+        usleep(1);
     }
 }
