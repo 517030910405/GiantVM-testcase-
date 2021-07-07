@@ -1,6 +1,6 @@
+from __future__ import print_function
 import time
 time.sleep(4)
-from __future__ import print_function
 import argparse
 import torch
 import torch.nn as nn
